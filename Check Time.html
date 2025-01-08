@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+</head>
+<body>
+    <p id="greet"></p>
+
+<script>
+    // Get the current hour
+    const currentHour = new Date().getHours();
+    let greeting = '';
+
+    // Determine the greeting based on the current hour
+    if (currentHour >= 0 && currentHour < 12) {
+        greeting = 'Good morning';
+    } else if (currentHour >= 12 && currentHour < 17) {
+        greeting = 'Good afternoon';
+    } else if (currentHour >= 17 && currentHour <= 23) {
+        greeting = 'Good evening';
+    }
+
+    // Get the current time as a formatted string
+    const currentTime = new Date().toLocaleTimeString();
+
+    // Display the greeting and time in an alert
+    // alert(`${greeting}, the time is ${currentTime}`);
+
+    //adds information 
+    document.getElementById("greet").innerHTML = `${greeting}, the time is ${currentTime}`
+
+    // Apply styling to invert colors and set background
+    document.body.style.filter = "invert(1)";
+    document.body.style.backgroundColor = "#000";
+</script>
+</body>
+</html>
